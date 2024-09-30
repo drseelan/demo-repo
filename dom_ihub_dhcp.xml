@@ -1,0 +1,112 @@
+<ihub>
+
+    <keyword name="dhcp_ies_int_config">
+        <parameters>
+            <parameter required="yes" name="interface_name" description="This is interface_name "> </parameter>
+            <parameter required="yes" name="session_name" description="This is session_name "> </parameter>
+            <parameter required="yes" name="action" description="This is action "> </parameter>
+            <parameter required="yes" name="service_name" description="This is service_name "> </parameter>
+            <parameter required="yes" name="admin_state" description="This is admin_state "> </parameter>
+            <parameter required="no" name="optn82_circuit_id_ascii" description="This is optn82_circuit_id_ascii "> </parameter>
+            <parameter required="no" name="optn82_action" description="This is optn82_action "> </parameter>
+            <parameter required="no" name="delete_dhcp" description="This is delete_dhcp "> </parameter>
+            <parameter required="no" name="max_leases" description="This is max_leases "> </parameter>
+            <parameter required="no" name="optn82_linkselection_ip" description="This is optn82_linkselection_ip "> </parameter><parameter required="no" name="optn82_circuit_id_ascii" description="This is optn82_circuit_id_ascii "> </parameter>
+            <parameter required="no" name="del_optn_82_remote_id" description="This is del_optn_82_remote_id "> </parameter>
+            <parameter required="no" name="optn82_circuit_id_hex" description="This is optn82_circuit_id_hex "> </parameter>
+            <parameter required="no" name="del_optn_82" description="This is del_optn_82 "> </parameter>
+            <parameter required="no" name="del_optn_82_circuit_id" description="This is del_optn_82_circuit_id "> </parameter>
+            <parameter required="no" name="optn82_remote_id_ascii" description="This is optn82_remote_id_ascii "> </parameter>
+            <parameter required="no" name="delete_gi_addr" description="This is delete_gi_addr "> </parameter>
+            <parameter required="no" name="server" description="This is server "> </parameter>
+            <parameter required="no" name="gi_address" description="This is gi_address "> </parameter>
+            <parameter required="no" name="del_optn_82_linkselection_ip" description="This is del_optn_82_linkselection_ip "> </parameter>
+            <parameter required="no" name="description" description="This is description "> </parameter>
+            <parameter required="no" name="del_optn_82_actn" description="This is del_optn_82_actn "> </parameter>
+            <parameter required="no" name="optn82_remote_id_hex" description="This is optn82_remote_id_hex "> </parameter>
+            <parameter required="no" name="basic-subscriber-mgmt" description="This is basic-subscriber-mgmt "> </parameter>
+            <parameter required="no" name="del_server" description="This is del_server "> </parameter>
+        </parameters>
+        <description>This command enables the context to configure DHCP parameters.</description>
+        <example>
+            configure dhcp service_name=v1 admin_state=enable
+        </example>
+        <library>
+            ULKS/NCY_KW/IHUB/ihub_dhcp.py
+        </library>
+    </keyword>
+    
+    
+    <keyword name="dhcp_vprn_int_config">
+        <parameters>
+            <parameter required="yes" name="service_name" description="This is service_name"> </parameter>
+            <parameter required="yes" name="action" description="This is action"> </parameter>
+            <parameter required="yes" name="interface_name" description="This is interface_name"> </parameter>
+            <parameter required="yes" name="admin_state" description="This is admin_state"> </parameter>
+            <parameter required="no" name="description" description="This is description"> </parameter>
+            <parameter required="no" name="server" description="This is server"> </parameter>
+            <parameter required="no" name="gi_address" description="This is gi_address"> </parameter>
+            <parameter required="no" name="max_leases" description="This is max_leases"> </parameter>
+            <parameter required="no" name="optn82_action" description="This is optn82_action"> </parameter>
+            <parameter required="no" name="optn82_remote_id_ascii" description="This is optn82_remote_id_ascii"> </parameter>
+            <parameter required="no" name="optn82_remote_id_hex" description="This is optn82_remote_id_hex"> </parameter>
+            <parameter required="no" name="optn82_circuit_id_ascii" description="This is optn82_circuit_id_ascii"> </parameter>
+            <parameter required="no" name="optn82_circuit_id_hex" description="This is optn82_circuit_id_hex"> </parameter>
+            <parameter required="no" name="optn82_linkselection_ip" description="This is optn82_linkselection_ip"> </parameter>
+            <parameter required="no" name="delete_dhcp" description="This is delete_dhcp"> </parameter>
+            <parameter required="no" name="del_server" description="This is del_server"> </parameter>
+            <parameter required="no" name="delete_gi_addr" description="This is delete_gi_addr"> </parameter>
+            <parameter required="no" name="del_optn_82" description="This is del_optn_82"> </parameter>
+            <parameter required="no" name="del_optn_82_actn" description="This is del_optn_82_actn"> </parameter>
+            <parameter required="no" name="del_optn_82_remote_id" description="This is del_optn_82_remote_id"> </parameter>
+            <parameter required="no" name="del_optn_82_circuit_id" description="This is del_optn_82_circuit_id"> </parameter>
+            <parameter required="no" name="del_optn_82_linkselection_ip" description="This is del_optn_82_linkselection_ip"> </parameter>
+            
+        </parameters>
+        <description>The interface command is used to create and manage IP routing interfaces within a Virtual Private Routed Network (VPRN) service. These interfaces, primarily used for subscriber internet access, are linked with the service core network routing instance and default routing table. Interface names must be unique, case-sensitive, and cannot be in the format of an IP address (e.g., \"int-1.1.1.1\" is allowed, but \"1.1.1.1\" is not). Use the configure router service-prefix command to control subnets and manage IP address spaces for VPRN interfaces. Entering a new name creates a new interface, while entering an existing name allows for editing. Interfaces are created in an enabled state and must be explicitly defined as no default names exist. To remove an interface, it must be shut down first; SAPs associated with an interface must also be disabled before they can be removed, as their status relies on the interface's status</description>
+        <example>
+            Not Available
+        </example>
+        <library>
+            ULKS/NCY_KW/IHUB/ihub_dhcp.py
+        </library>
+    </keyword>
+    
+    
+    
+    <keyword name="show_ies_dhcp_lease">
+        <parameters>
+            <parameter required="yes" name="service_name" description="This is service_name"> </parameter>
+            <parameter required="yes" name="basic-subscriber-mgmt" description="This is basic-subscriber-mgmt"> </parameter>
+            <parameter required="yes" name="action" description="This is action"> </parameter>
+            <parameter required="no" name="session_name" description="This is session_name"> </parameter>
+        </parameters>
+        <description>Displays DHCP lease state related information for the specified interface.</description>
+        <example>
+            Not Available
+        </example>
+        <library>
+            ULKS/NCY_KW/IHUB/ihub_dhcp.py
+        </library>
+    </keyword>
+    
+    
+    
+    
+    <keyword name="show_vprn_dhcp_lease">
+        <parameters>
+            <parameter required="yes" name="service_name" description="This is service_name"> </parameter>
+            <parameter required="yes" name="basic-subscriber-mgmt" description="This is basic-subscriber-mgmt"> </parameter>
+            <parameter required="yes" name="action" description="This is action"> </parameter>
+            <parameter required="no" name="session_name" description="This is session_name"> </parameter>
+        </parameters>
+        <description>This command enables the context for DHCP debugging.\nThe no form of the command disables DHCP debugging</description>
+        <example>
+            Not Available
+            </example>
+            <library>
+                ULKS/NCY_KW/IHUB/ihub_dhcp.py
+            </library>
+        </keyword>
+        
+    </ihub>
